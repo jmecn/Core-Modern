@@ -3,7 +3,7 @@ run-name: "[📦]: Project Build #${{ github.run_number }}"
 on:
   push:
     branches:
-      - dev
+      - github-runner/dev
     paths:
       - 'gradle/**'
       - 'src/**'
