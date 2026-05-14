@@ -20,7 +20,7 @@ jobs:
   info:
     name: "[🖥️] Project Info"
     runs-on: self-hosted
-    if: ${{ !github.event.repository.fork }}
+    if: ${{ github.repository == 'jmecn/Core-Modern' }}
     outputs:
       name: ${{ steps.check.outputs.name }}
       version: ${{ steps.check.outputs.version }}
