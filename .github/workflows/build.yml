@@ -19,7 +19,7 @@ concurrency:
 jobs:
   info:
     name: "[🖥️] Project Info"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: ${{ github.repository == 'jmecn/Core-Modern' }}
     outputs:
       name: ${{ steps.check.outputs.name }}
@@ -122,7 +122,7 @@ jobs:
   build:
     name: "[📦] Build Project"
     needs: [info]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: "[📦] Checkout"
         uses: actions/checkout@v6
@@ -160,7 +160,7 @@ jobs:
   release:
       name: "[🚀] Release"
       needs: [info, build]
-      runs-on: self-hosted
+      runs-on: ubuntu-latest
       if: ${{ needs.info.outputs.make_release == 'true' }}
 
       steps:
